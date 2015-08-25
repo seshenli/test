@@ -8,10 +8,10 @@ from django.contrib.auth import get_user_model
 from UserManage.models import User,RoleList,PermissionList
 
 class LoginUserForm(forms.Form):
-    username = forms.CharField(label=u'账 号',error_messages={'required':u'账号不能为空'},
-        widget=forms.TextInput(attrs={'class':'form-control'}))
-    password = forms.CharField(label=u'密 码',error_messages={'required':u'密码不能为空'},
-        widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    username = forms.CharField(label=u'账 号', error_messages={'required':u'账号不能为空'},
+        widget=forms.TextInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(label=u'密 码', error_messages={'required':u'密码不能为空'},
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     def __init__(self, request=None, *args, **kwargs):
         self.request = request
@@ -35,12 +35,12 @@ class LoginUserForm(forms.Form):
         return self.user_cache
 
 class ChangePasswordForm(forms.Form):
-    old_password = forms.CharField(label=u'原始密码',error_messages={'required':'请输入原始密码'},
-        widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    new_password1 = forms.CharField(label=u'新密码',error_messages={'required':'请输入新密码'},
-        widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    new_password2 = forms.CharField(label=u'重复输入',error_messages={'required':'请重复新输入密码'},
-        widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    old_password = forms.CharField(label=u'原始密码', error_messages={'required': '请输入原始密码'},
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    new_password1 = forms.CharField(label=u'新密码', error_messages={'required': '请输入新密码'},
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    new_password2 = forms.CharField(label=u'重复输入', error_messages={'required': '请重复新输入密码'},
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     def __init__(self, user, *args, **kwargs):
         self.user = user
